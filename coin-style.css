@@ -1,0 +1,247 @@
+@import url('https://fonts.googleapis.com/css2?family=ZCOOL+XiaoWei&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@200&display=swap');
+:root {
+    --clr-primary: #2f2f2f;
+    --clr-gray-1: #4F4F4F;
+    --clr-gray-2: #f2f2f2;
+    --border-radius: 10%;
+    --transition: all 0.5s cubic-bezier(0.24, -0.04, 0, 1.24);
+}
+
+*,
+::after,
+::before {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+html,
+body {
+    color: var(--clr-primary);
+    font-family: 'Noto Serif SC', serif;
+}
+
+h3 {
+    text-align: center;
+    padding: 1rem;
+}
+
+button {
+    background-color: var(--clr-gray-1);
+    font-family: 'Noto Serif SC', serif;
+    text-align: center;
+    font-size: 1rem;
+    color: white;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem 2rem;
+    margin: 0 auto 0 auto;
+    border-radius: 0.5rem;
+}
+
+button:hover {
+    transition: var(--transition);
+    background-color: #6f6f6f;
+    box-shadow: 4px 4px 9px 2px rgba(0, 0, 0, 0.25);
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    margin: 0 50px 50px 50px;
+    text-align: center;
+    justify-content: space-evenly;
+}
+
+.coins {
+    margin: 0 auto 0 auto;
+}
+
+.coin {
+    background-color: var(--clr-gray-2);
+    box-shadow: 4px 4px 9px 2px rgba(0, 0, 0, 0.25);
+    width: 50px;
+    height: 50px;
+    display: inline-block;
+    border-radius: 50%;
+    transition: var(--transition);
+    transition: opacity 1s ease-out;
+    /* opacity: 0; */
+    /* transition-delay: 1s; */
+}
+
+.coin-flip {
+    animation: coinFlip 1.5s ease forwards infinite alternate;
+}
+
+.coin-dark {
+    background-color: var(--clr-gray-1);
+}
+
+.coin-light {
+    /* border: 6px solid #828282; */
+    background-color: var(--clr-gray-2);
+}
+
+@keyframes coinFlip {
+    100% {
+        background-color: var(--clr-gray-1);
+    }
+}
+
+.instruction {
+    display: none;
+}
+
+.answer {
+    background-color: var(--clr-gray-2);
+    color: var(--clr-primary);
+    text-align: left;
+    padding: 3rem 2rem 3rem 2rem;
+    margin: auto;
+    border-radius: 50px;
+    transition: all 0.5s linear 1s;
+    display: none;
+}
+
+.gua-title {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.title {
+    font-weight: bold;
+}
+
+.gua-line {
+    padding-bottom: 1.5em;
+}
+
+#throw,
+#okay {
+    display: none;
+}
+
+.show {
+    display: block !important;
+    animation: coinSet 1.5s ease forwards 1;
+}
+
+@keyframes coinSet {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 100;
+        display: block !important;
+    }
+}
+
+
+/* =========================
+MEDIA QUERIES
+============================*/
+
+
+/* Small devices (landscape phones, 576px and up) */
+
+@media screen and (min-width: 400px) {
+    h3 {
+        padding: 2rem;
+    }
+    .coin {
+        width: 40px;
+        height: 40px;
+        margin: 0 0.5rem 0 0.5rem;
+    }
+    button {
+        /* font-size: 1rem; */
+        padding-top: 0.5rem;
+        padding-bottom: 0.5rem;
+        /* margin-top: 1rem; */
+        width: 100%;
+    }
+    .answer {
+        padding-top: 2rem;
+        padding-bottom: 1rem;
+    }
+}
+
+
+/* Medium devices (tablets, 768px and up) */
+
+@media screen and (min-width: 768px) {
+    html {
+        font-size: 1rem;
+    }
+    h3 {
+        font-size: 0.75rem;
+        padding: 2rem;
+    }
+    button {
+        font-size: 1rem;
+        padding-top: 0.5rem;
+        padding-bottom: 0.5rem;
+        width: auto;
+    }
+    .coin {
+        width: 50px;
+        height: 50px;
+        margin: 0.5rem;
+    }
+    .answer {
+        width: 80%;
+    }
+}
+
+
+/* Extra large devices (large desktops, 1200px and up) */
+
+@media (min-width: 1200px) {
+    .coin {
+        width: 60px;
+        height: 60px;
+        margin: 0 0.5rem 0 0.5rem;
+    }
+    .answer {
+        padding: 3rem 6rem 3rem 6rem;
+        width: 65%;
+    }
+}
+
+
+/* =========================
+TESTING 
+============================*/
+
+
+/* .parent {
+    background-color: hsla(200, 100%, 20%);
+    margin: auto;
+    height: 200px;
+    width: 200px;
+}
+
+.child {
+    background-color: red;
+    height: 50%;
+    width: 50%;
+    transition: transform 1s ease-in; 
+    animation: left-to-right 1s ease-in forwards infinite alternate; 
+} */
+
+
+/* .parent:hover .child {
+    animation: left-to-right 1s ease-in forwards 3 alternate 3s;
+    forward: keep animated position;
+    animation-fill-mode: forwards;
+    animation-play-state: paused;
+} */

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Coin Flipper</title>
+    <link rel="stylesheet" href="./coin-style.css">
+</head>
+<header>
+    <h3>六十四卦金钱课</h3>
+</header>
+
+<body>
+    <div class="container">
+        <div class="coins">
+            <div class="coin coin-flip" id="coin1"></div>
+            <div class="coin coin-flip" id="coin2"></div>
+            <div class="coin coin-flip" id="coin3"></div>
+            <div class="coin coin-flip" id="coin4"></div>
+            <div class="coin coin-flip" id="coin5"></div>
+            <div class="coin coin-flip" id="coin6"></div>
+        </div>
+        <div class="instruction">
+            <p>准备好你的问题。</p>
+        </div>
+        <div class="answer">
+            <h4 class="gua-title"></h4>
+            <p class="gua-line"><span class="title">卦辞</span>
+                <span class="gua-saying"></span></p>
+            <p class="gua-line"><span class="title">推断</span>
+                <span class="gua-deduct">
+                </span></p>
+            <p class="gua-line gua-deductDesc"></p>
+            <p class="gua-line"><span class="title">象曰</span>
+                <span class="gua-explain"></span></p>
+        </div>
+        <button id="throw" class="show">丢 👋</button>
+        <button id="okay" class="">好</button>
+    </div>
+    <script src="./coin.js"></script>
+</body>
+
+</html>
