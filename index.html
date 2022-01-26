@@ -49,13 +49,30 @@
         width: 30%;
         border: solid 1px grey;
     }
+    .ghost{
+        font-size: 5rem;
+        animation: mymove 2.5s infinite;
+        animation-direction: alternate;
+        animation-timing-function: ease-in-out;
+        -webkit-animation-timing-function: ease-in-out;
+    }
+    @keyframes mymove {
+        0%, 100%{
+  	    bottom: 0;
+        font-size: 5rem;
+    }
+    50%{
+  	    bottom: 20px;
+        font-size: 5.25rem;
+    } 
+}
 </style>
 
 <body>
     <div class="container">
       
         <ul>
-            <li><h1 style="font-size: 5rem">👻</h1></li>  
+            <li><h1 class="ghost">👻</h1></li>  
             <li><h2>J.Y. Tan</h2></li>
             <li>Birthday: 19th August</li>
             <li>Food: Curry</li>
